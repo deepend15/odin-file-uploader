@@ -1,7 +1,6 @@
 {
-  "name": "express-template",
+  "name": "odin-file-uploader",
   "version": "1.0.0",
-  "description": "Includes Express, EJS, express-validator, &amp; pg. May update in the future with more.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -11,20 +10,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepend15/node-express-template.git"
+    "url": "git+https://github.com/deepend15/odin-file-uploader.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/deepend15/node-express-template/issues"
+    "url": "https://github.com/deepend15/odin-file-uploader/issues"
   },
-  "homepage": "https://github.com/deepend15/node-express-template#readme",
+  "homepage": "https://github.com/deepend15/odin-file-uploader#readme",
   "dependencies": {
+    "@prisma/adapter-pg": "^7.7.0",
+    "@prisma/client": "^7.7.0",
+    "dotenv": "^17.4.1",
     "ejs": "^4.0.1",
     "express": "^5.2.1",
     "express-validator": "^7.3.1",
     "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.7.0"
   }
 }
