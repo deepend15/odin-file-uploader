@@ -1,15 +1,6 @@
 import { Client } from "pg";
 
-// const SQL = `
-// CREATE TABLE IF NOT EXISTS [tableName] (
-//   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-//    [column info]
-// );
-
-// INSERT INTO [tableName] ([columns])
-// VALUES
-//   ([value info])
-// `;
+// check https://www.prisma.io/docs/prisma-orm/quickstart/postgresql#8-write-your-first-query
 
 async function main() {
   console.log("Seeding...");

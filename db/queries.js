@@ -1,9 +1,3 @@
-import pool from "./pool.js";
+import { prisma } from "./prisma.js";
 
-// define async functions with SQL queries i.e.:
-// async function getAllMessages() {
-//   const { rows } = await pool.query("SELECT * FROM [tableName]");
-//   return rows;
-// }
-
-// export { functions }
+// check https://www.prisma.io/docs/prisma-orm/quickstart/postgresql#8-write-your-first-query and https://www.prisma.io/docs/orm/prisma-client/queries/crud
