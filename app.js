@@ -4,7 +4,7 @@ import session from "express-session";
 import { PrismaSessionStore } from "@quixo3/prisma-session-store";
 import { prisma } from "./db/prisma.js";
 import passport from "passport";
-// import router(s)
+import indexRouter from "./routes/indexRouter.js";
 import { CustomNotFoundError } from "./errors/CustomNotFoundError.js";
 
 const app = express();
@@ -40,6 +40,7 @@ import "./passportConfig.js";
 app.use(passport.session());
 
 app.use((req, res, next) => {
+  console.log("Request URL:", req.url);
   console.log("Session: ", req.session);
   console.log("Session ID: ", req.session.id);
   console.log("User: ", req.user);
@@ -52,7 +53,7 @@ app.get("/favicon.ico", (req, res) => {
   res.status(204).end();
 });
 
-// app.use() / router(s) info
+app.use("/", indexRouter);
 
 // 404 error
 app.use((req, res, next) => {

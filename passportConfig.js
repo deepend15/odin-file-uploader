@@ -1,12 +1,14 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcryptjs";
+import { prisma } from "./db/prisma.js";
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
-      // EDIT USER LINE BELOW
-      const user = null;
+      const user = await prisma.user.findUnique({
+        where: { username: username },
+      });
 
       if (!user) {
         return done(null, false, { message: "Username does not exist." });
@@ -30,8 +32,9 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    // EDIT USER LINE BELOW
-    const user = null;
+    const user = await prisma.user.findUnique({
+      where: { id: 99 },
+    });
 
     done(null, user);
   } catch (err) {
